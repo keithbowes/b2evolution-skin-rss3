@@ -16,8 +16,7 @@ if( $feed_content == 'none' )
 }
 
 $Item = mainlist_get_item();
-/* Weird random code to make an entity tag. */
-$etag = '"' . @preg_replace('/(.*)[\n\r].*/', '$1', $Item->content | $app_version << $Item->wordcount) . '"';
+$etag = gen_current_page_etag();
 
 if (@strstr($_SERVER['HTTP_IF_NONE_MATCH'], $etag))
 {
