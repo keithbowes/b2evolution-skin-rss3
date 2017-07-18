@@ -79,10 +79,14 @@ link: <?php
 			param('p');
 			if ($p)
 				echo "&p=$p";
-
+			if (isset($Item))
+			{
 ?>
 
 language: <?php $Item->disp( 'locale', 'xml' ) ?>
+<?php
+			}
+?>
 
 generator: <?php printf("%s %s\n", $app_name, $app_version); ?>
 docs: http://www.aaronsw.com/2002/rss30
