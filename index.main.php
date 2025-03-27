@@ -34,7 +34,8 @@ skin_content_header('text/plain');
 require_once 'ad.include.php';
 
 echo "title: ";
-html_entity_decode($Blog->disp('name', 'xml'), ENT_QUOTES, 'UTF-8');
+if ($Blog->disp('name', 'xml') != NULL)
+	html_entity_decode($Blog->disp('name', 'xml'), ENT_QUOTES, 'UTF-8');
 echo "\n";
 echo "link: ";
 $Blog->disp('link', 'xml');
